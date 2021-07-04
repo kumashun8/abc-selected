@@ -11,15 +11,12 @@ func shiftOnly(nums []int, length int, score int) int {
 	var i int
 	for i = 0; i < length; i++ {
 		if nums[i]%2 != 0 {
-			break
+			return score
 		}
 		nums[i] = nums[i] / 2
 	}
 
-	if i == length {
-		return shiftOnly(nums, length, score+1)
-	}
-	return score
+	return shiftOnly(nums, length, score+1)
 }
 
 func main() {
